@@ -640,3 +640,14 @@ p {
     animation: none !important;
   }
 }
+/* FIX NAV BUTTON POSITION */
+.nav-toggle {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-wrapper {
+  position: relative;
+}
