@@ -62,6 +62,7 @@ img {
 .container {
   width: min(var(--container), 92%);
   margin-inline: auto;
+  padding: 0 2rem;
 }
 
 .skip-link {
@@ -101,6 +102,12 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.nav-toggle{
+  margin-left: auto;
 }
 
 .brand {
@@ -110,6 +117,7 @@ img {
 }
 
 .primary-nav {
+  margin-left: auto;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -224,6 +232,7 @@ p {
 }
 
 .hero-card {
+  margin-top: 2rem;
   padding: 1.45rem 1.35rem;
   align-self: center;
   position: relative;
@@ -338,6 +347,7 @@ p {
 .section-content {
   max-width: 72ch;
   margin-bottom: 1.3rem;
+  grid-column: 1;
 }
 
 .edu-card {
@@ -419,13 +429,14 @@ p {
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.4rem;
-  align-items: start;
+  gap: 2rem;
 }
 
 .contact-form {
   padding: 1.2rem;
   display: grid;
+  grid-column: 2;
+  grid-row: 1 / span 2;
   gap: 0.5rem;
 }
 
@@ -455,6 +466,7 @@ p {
 
 .contact-links {
   display: grid;
+  grid-column: 1;
   gap: 0.45rem;
   margin: 0.5rem 0 0.8rem;
 }
@@ -570,11 +582,24 @@ p {
 }
 
 @media (max-width: 900px) {
-  .hero-grid,
-  .contact-grid {
+  .hero-grid{
     grid-template-columns: 1fr;
   }
-
+}
+@media (max-width: 700px) {
+  .contact-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .section-content reveal {
+    order: 1;
+  }
+  .contact-form reveal delay-1 {
+    order: 2;
+  }
+  .contact-links {
+    order: 3;
+  }
   .skills-grid,
   .projects-grid,
   .highlights-grid {
@@ -650,4 +675,32 @@ p {
 
 .nav-wrapper {
   position: relative;
+}
+@media (max-width: 700px) {
+  .hero-actions {
+    flex-direction: column;
+  }
+}
+.site-footer {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.social-icons {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.8rem;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  color: #b0bcd5;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #4fd1c5;
+  transform: translateY(-5px);
 }
